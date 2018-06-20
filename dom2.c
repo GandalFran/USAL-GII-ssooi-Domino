@@ -118,7 +118,7 @@ void branchD(void){
 int createChild(typePidTableEntry tableEntry, int stayBlocked){
 	int childPid;
 
-	EXIT_IF_WRONG_VALUE( childPid = fork(), 0, CHILD_CREATION_ERROR );
+	EXIT_IF_WRONG_VALUE( childPid = fork(), -1, CHILD_CREATION_ERROR );
 
 	if(isFather(childPid)){
 		createTableEntry(tableEntry,childPid);

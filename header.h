@@ -27,10 +27,10 @@
 #define isChild(value) ((value) == 0)
 #define isFather(value) ((value) != 0)
 
-#define EXIT_IF_WRONG_VALUE(value, goodValue, errorMsg)											\
+#define EXIT_IF_WRONG_VALUE(value, wrongValue, errorMsg)										\
 	do{																							\
 		char errorTag[MAX];																		\
-		if( (value) != (goodValue) ){															\
+		if( (value) == (wrongValue) ){															\
 			sprintf(errorTag,"\n[%s:%d:%s] # %s # ",__FILE__,__LINE__,__FUNCTION__,errorMsg);	\
 			perror(errorTag);																	\
 		}																						\
